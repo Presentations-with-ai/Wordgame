@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>1000 баллов</title>
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="card topCard">
+      <div class="topBar">
+        <h1>1000 баллов</h1>
+        <button id="themeBtn" class="iconBtn" type="button" aria-label="Тема">◐</button>
+      </div>
+
+      <div class="miniStats cleanStats">
+        <div class="mini"><b id="score">0</b><span>ОЧКИ</span></div>
+        <div class="mini"><b id="round">0</b><span>ВОПРОС</span></div>
+        <div class="mini"><b id="categoryStat">Все</b><span>КАТЕГОРИЯ</span></div>
+      </div>
+      <b id="loadedPart" class="hidden">—</b>
+
+      <div class="progressWrap" aria-label="Прогресс до 1000 баллов">
+        <div class="progressBar" id="progressBar"></div>
+      </div>
+      <div class="progressText" id="progressText">0 / 1000</div>
+    </section>
+
+    <section class="resultCard" id="startScreen">
+      <h2>Категория</h2>
+      <p class="muted tinyStatus" id="baseInfo"></p>
+      <div class="categoryGrid" id="categoryGrid"></div>
+      <button id="startBtn" type="button">Начать</button>
+    </section>
+
+    <section class="resultCard gameCard hidden" id="gameScreen">
+      <div class="questionTop">
+        <div class="pill" id="questionId">#—</div>
+        <div class="pill categoryPill" id="categoryPill">Все</div>
+        <button class="smallBtn" id="shuffleBtn" type="button">Случайный</button>
+      </div>
+
+      <h2 class="question" id="questionText">Загрузка...</h2>
+
+      <div class="board" id="board"></div>
+
+      <div class="hostBox">
+        <button id="hostToggleBtn" class="secondaryBtn hostToggle" type="button">Ответы ведущего</button>
+        <div class="answerList hidden" id="answerList"></div>
+      </div>
+
+      <div class="actions three">
+        <button id="nextBtn" type="button">Следующий</button>
+        <button id="undoBtn" class="ghostBtn" type="button" disabled>Отмена</button>
+        <button id="changeCategoryBtn" class="ghostBtn" type="button">Категория</button>
+      </div>
+
+      <button id="showAllBtn" class="hidden" type="button">Открыть все</button>
+      <p class="message" id="message"></p>
+    </section>
+
+    <section class="resultCard winCard hidden" id="winScreen">
+      <div class="heroBadge">🏆</div>
+      <h2>1000 очков</h2>
+      <p class="muted" id="finalText">Игра завершена.</p>
+      <button id="restartBtn" type="button">Заново</button>
+    </section>
+  </main>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
